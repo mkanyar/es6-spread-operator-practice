@@ -12,11 +12,15 @@ function Todo(props) {
   }
   return (
     <div onClick={handleClick}>
-      {bool ? (
-        <li style={{ textDecoration: "line-through" }}>{props.text}</li>
+      <li style={{ textDecoration: bool ? "line-through" : "none" }}>
+        {props.text}
+      </li>
+      {/* This works as well  */}
+      {/* {bool ? (
+        <li style={{ textDecoration: "line-through" }}>{props.text} </li>
       ) : (
-        <li style={{ textDecoration: "none" }}>{props.text}</li>
-      )}
+        <li style={{ textDecoration: "none" }}>{props.text} </li>
+      )} */}
     </div>
   );
 }
