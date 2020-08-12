@@ -13,6 +13,15 @@ function App() {
     });
     setItem("");
   }
+  function deleteItem(id) {
+    //delete an item. Return an array that satisfy the condition:
+    // the condition being the index of the previous values has to be different than the id of the clicked item
+    setArray((prevValue) => {
+      return prevValue.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div className="container">
       <div className="heading">
@@ -27,7 +36,7 @@ function App() {
       <div>
         <ul>
           {array.map((task, i) => (
-            <Todo text={task} key={i} />
+            <Todo text={task} key={i} id={i} checked={deleteItem} />
           ))}
         </ul>
       </div>
