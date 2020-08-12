@@ -36,6 +36,7 @@ function App() {
       <div>
         <ul>
           {array.map((task, i) => (
+            // checked will be accessed from the Todo components
             <Todo text={task} key={i} id={i} checked={deleteItem} />
           ))}
         </ul>
