@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Todo from "./Todo";
 function App() {
   const [item, setItem] = useState("");
   const [array, setArray] = useState([]);
@@ -27,7 +27,7 @@ function App() {
       <div>
         <ul>
           {array.map((task, i) => (
-            <li key={i}>{task}</li>
+            <Todo text={task} key={i} />
           ))}
         </ul>
       </div>
